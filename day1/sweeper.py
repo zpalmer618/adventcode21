@@ -1,26 +1,37 @@
 #!/usr/bin/python
 
-# Import input values into a list
+# Open the input file and slurp it into memory
 with open('depth.txt') as infile:
     stuff = infile.read()
 
-depth = stuff.split("\n")
-meas = depth[:-1]
+# Split the list into individual values and take off annoying trailing
+# character
+lis = stuff.split("\n")
+depth = lis[:-1]
 
-base = meas[0]
+# Convert list of strings to integers
+for i in range(len(depth)):
+    depth[i] = int(depth[i])
+
+# Compare each entry pairwise to determine how often the depth
+# increases
 count = 0
-
-# Check if every value in the list is greater than the previous value
-for depth in meas:
-    # if depth == base:
-        # print(f"""{depth} [No previous measurement]""")
-    # Had to use the int() becuase I was comparing the numbers as strings instead of their integer value
-    if int(depth) > int(base):
+prev = depth[0]
+for num in depth:
+    if num > prev:
         count += 1
-        # print(f"""{depth} [increased]""")
-    # else:
-        # print(f"""{depth} [decreased]""")
-    # print("BEEP\n")
-    base = depth
-# Print number of times the value increases
+    prev = num
+print(count)
+
+# Compare sets of three pairwise to determine how often the depth of
+# sets of three increase
+count = 0
+i = 0
+prev = sum(depth[i:i+3])
+while i < len(depth)-2:
+    val = sum(depth[i:i+3])
+    if val > prev:
+        count +=1
+    prev = val
+    i += 1
 print(count)
