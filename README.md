@@ -1,7 +1,7 @@
 # Advent of Code 2021
 
-A simple repository for my solutions to the [Advent of Code]
-(https://adventofcode.com/) projects. These will be attempted in
+A simple repository for my solutions to the [Advent of
+Code](https://adventofcode.com/) projects. These will be attempted in
 python, but I may branch out to other programming languages later to
 work on those skills.
 
