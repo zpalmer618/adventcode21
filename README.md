@@ -17,27 +17,27 @@ From: [Day 1](https://adventofcode.com/2021/day/1)
 [My Solution](https://github.com/zpalmer618/adventcode21/blob/master/day1/sweeper.py):
 
 Open the input file and slurp it into memory.
-```
+```python
 with open('depth.txt') as infile:
     stuff = infile.read()
 ```
 
 Split the list into individual values and take off annoying trailing
 character.
-```
+```python
 lis = stuff.split("\n")
 depth = lis[:-1]
 ```
 
 Convert list of strings to integers.
-```
+```python
 for i in range(len(depth)):
     depth[i] = int(depth[i])
 ```
 
 Compare each entry pairwise to determine how often the depth
 increases.
-```
+```python
 count = 0
 prev = depth[0]
 for num in depth:
@@ -49,7 +49,7 @@ print(count)
 
 Compare sets of three pairwise to determine how often the depth of
 sets of three increase.
-```
+```python
 count = 0
 i = 0
 prev = sum(depth[i:i+3])
