@@ -13,6 +13,7 @@ with determining if every sweep on the sonar has either increased or
 decreased in depth since the last sweep.
 
 From: [Day 1](https://adventofcode.com/2021/day/1)
+<<<<<<< HEAD
 
 ## Advent of Code: Day 1 - Learning to Pilot a Submarine
 
@@ -24,3 +25,5 @@ pilot the craft effectively, you must determine your final horizontal
 position and depth from a series of given commands.
 
 From [Day 2](https://adventofcode.com/2021/day/2)
+=======
+>>>>>>> 64c09a9878f6b09362d2c271a70a6c2a325b27b7
