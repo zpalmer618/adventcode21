@@ -20,10 +20,8 @@ for line in direcs:
         horiz += int(new_list[1])
         depth += int(new_list[1])*aim
     elif new_list[0] == "up":
-        # depth -= int(new_list[1])
         aim -= int(new_list[1])
     elif new_list[0] == "down":
-        # depth += int(new_list[1])
         aim += int(new_list[1])
 print(horiz*depth)
 

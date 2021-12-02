@@ -63,7 +63,7 @@ print(count)
 ```
 
 
-## Advent of Code: Day 1 - Learning to Pilot a Submarine
+## Advent of Code: Day 2 - Learning to Pilot a Submarine
 
 Now that you understand how the sonar sweeper works, you must figure
 out how to pilot the submarine to avoid any untimely "meetings" with
@@ -73,3 +73,36 @@ pilot the craft effectively, you must determine your final horizontal
 position and depth from a series of given commands.
 
 From [Day 2](https://adventofcode.com/2021/day/2)
+
+[My Solution](https://github.com/zpalmer618/adventcode21/blob/master/day2/pilot.py):
+
+Read in the input and separate each line
+```python
+with open('inp.txt') as infile:
+    lines = infile.read()
+
+directions = lines.split("\n")
+direcs = directions[:-1]
+```
+
+Make each line a new list of key, value pairs
+```python
+new_list = []
+horiz = 0
+depth = 0
+aim = 0
+for line in direcs:
+    new_list = line.split()
+```
+    
+Given a key value pair, increase or decrease horiz, depth, and aim accordingly
+```python
+    if new_list[0] == "forward":
+        horiz += int(new_list[1])
+        depth += int(new_list[1])*aim
+    elif new_list[0] == "up":
+        aim -= int(new_list[1])
+    elif new_list[0] == "down":
+        aim += int(new_list[1])
+print(horiz*depth)
+```
